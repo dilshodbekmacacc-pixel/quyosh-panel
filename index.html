@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="uz" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>KEONIA PowerBox — Portativ Quyosh Elektr Stansiyasi</title>
+  <meta name="description" content="Svet o'chganda uyingizda chiroq, Wi-Fi, noutbuk va televizor to'xtovsiz ishlasin. 220V va USB chiqishli ko'chma quyosh generatori.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#130f0d',
+              card: '#1e1815',
+              surface: '#261f1b',
+              border: '#332924',
+              orange: '#ff5a1f',
+              orangeHover: '#e04810',
+              textMuted: '#9e968f',
+              textSub: '#c4bbb3'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Inter / Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #130f0d;
+      color: #ffffff;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-brand-orange selection:text-white">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-[#130f0d]/95 backdrop-blur-md border-b border-brand-border">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="text-xl md:text-2xl font-black tracking-wider text-white">KEONIA <span class="text-brand-orange">Q4</span></span>
+      </div>
+      
+      <!-- Language Switcher (RU | UZ) -->
+      <div class="flex items-center bg-brand-surface rounded-lg p-1 border border-brand-border text-xs font-bold">
+        <button id="lang-ru" onclick="setLanguage('ru')" class="px-3 py-1 rounded text-brand-textMuted hover:text-white transition">RU</button>
+        <button id="lang-uz" onclick="setLanguage('uz')" class="px-3 py-1 rounded bg-brand-orange text-white transition">UZ</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Hero Section -->
+  <section class="pt-8 pb-12 md:py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        
+        <!-- Left: Product Showcase Card with Badges -->
+        <div class="lg:col-span-6">
+          <div class="relative bg-gradient-to-b from-[#241d19] to-[#1a1412] rounded-3xl p-6 md:p-8 border border-brand-border overflow-hidden shadow-2xl">
+            
+            <!-- Floating Product Feature Badges -->
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <div>
+                <span class="text-xs uppercase tracking-widest font-extrabold text-brand-orange block">PORTATIV STANSIYA</span>
+                <span class="text-xl md:text-2xl font-black text-white">KEONIA 400W PRO</span>
+              </div>
+              <div class="bg-brand-surface px-3 py-1.5 rounded-xl border border-brand-border text-right">
+                <span class="text-[10px] text-brand-textMuted block uppercase">Chiqish toki</span>
+                <span class="text-xs md:text-sm font-bold text-white">220V Toza Sinus</span>
+              </div>
+            </div>
+
+            <!-- Central Product Graphic Mockup -->
+            <div class="relative my-6 py-6 flex items-center justify-center">
+              <div class="w-full max-w-sm aspect-[4/3] bg-gradient-to-tr from-[#2a221d] via-[#3d2f26] to-[#1e1713] rounded-2xl border border-brand-border flex flex-col items-center justify-center relative p-6 shadow-inner text-center">
+                
+                <!-- Display simulation -->
+                <div class="bg-black/80 border border-brand-orange/40 rounded-lg px-4 py-2 mb-4 w-48 shadow-md">
+                  <div class="flex justify-between items-center text-[10px] font-mono text-emerald-400">
+                    <span>DC 13.1V</span>
+                    <span>100% [|||||]</span>
+                  </div>
+                  <div class="text-brand-orange font-mono text-xs font-bold mt-1 text-center">AC 220V • 50Hz</div>
+                </div>
+
+                <!-- Device Visual Core -->
+                <div class="flex items-center gap-4 text-brand-textSub text-xs">
+                  <div class="flex flex-col items-center">
+                    <span class="text-2xl mb-1">☀️</span>
+                    <span class="font-semibold text-[11px]">50W Panel</span>
+                  </div>
+                  <span class="text-brand-orange font-bold text-lg">+</span>
+                  <div class="flex flex-col items-center">
+                    <span class="text-2xl mb-1">🔋</span>
+                    <span class="font-semibold text-[11px]">400W Generator</span>
+                  </div>
+                  <span class="text-brand-orange font-bold text-lg">+</span>
+                  <div class="flex flex-col items-center">
+                    <span class="text-2xl mb-1">💡</span>
+                    <span class="font-semibold text-[11px]">3 ta LED Lampa</span>
+                  </div>
+                </div>
+
+                <!-- 1 Year Warranty Seal Badge -->
+                <div class="absolute bottom-3 left-3 bg-gradient-to-r from-amber-600 to-brand-orange text-white text-[10px] font-extrabold px-2.5 py-1 rounded-lg shadow-lg flex items-center gap-1">
+                  <span>★</span> 1 Yil Kafolat
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Specs Row on Image -->
+            <div class="grid grid-cols-3 gap-2 pt-2 border-t border-brand-border/60 text-center">
+              <div>
+                <p class="text-xs text-brand-textMuted" data-i18n="hero_f1_t">Quvvat</p>
+                <p class="text-sm font-bold text-white">400 W (Pik 600W)</p>
+              </div>
+              <div class="border-x border-brand-border/60">
+                <p class="text-xs text-brand-textMuted" data-i18n="hero_f2_t">Zaryadlash</p>
+                <p class="text-sm font-bold text-white">Quyosh + 220V</p>
+              </div>
+              <div>
+                <p class="text-xs text-brand-textMuted" data-i18n="hero_f3_t">Og'irligi</p>
+                <p class="text-sm font-bold text-white">Atigi 3.8 kg</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right: Sales Proposition, Pricing & CTA Box -->
+        <div class="lg:col-span-6 flex flex-col justify-center">
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight tracking-tight mb-4" data-i18n="hero_h1">
+            Quyosh generatori Keonia Q4: svet o'chganda xonadoningizda doim elektr bo'lsin
+          </h1>
+          <p class="text-brand-textSub text-sm md:text-base leading-relaxed mb-6" data-i18n="hero_desc">
+            Usta va montaj shart emas. 220V rozetkali ixcham elektr stansiyasi: Wi-Fi router, telefonlar, noutbuk, televizor va LED lampochkalarni soatlab uzluksiz quvvat bilan ta'minlaydi.
+          </p>
+
+          <!-- Pricing Box Card -->
+          <div class="bg-brand-card border border-brand-border rounded-2xl p-6 relative mb-6 shadow-xl">
+            <!-- Discount Badge -->
+            <div class="absolute -top-3.5 right-6 bg-brand-orange text-white text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">
+              -35% Chegirma
+            </div>
+
+            <div class="mb-4">
+              <span class="text-sm text-brand-textMuted line-through font-semibold">3 200 000 so'm</span>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-3xl md:text-4xl lg:text-5xl font-black text-brand-orange tracking-tight" id="main-price-display">2 090 000</span>
+                <span class="text-xl font-bold text-brand-orange">so'm</span>
+                <span class="text-xs text-brand-textMuted ml-2">(~165$)</span>
+              </div>
+              <p class="text-xs font-medium text-emerald-400 mt-1" data-i18n="price_save">Siz 1 110 000 so'm tejab qolasiz</p>
+            </div>
+
+            <!-- Primary Direct Action CTA Button -->
+            <a href="#order-form-section" class="w-full py-4 rounded-xl bg-brand-orange hover:bg-brand-orangeHover text-white font-extrabold text-center text-base md:text-lg transition transform active:scale-[0.99] shadow-lg shadow-orange-950/40 block" data-i18n="cta_btn">
+              Buyurtma berish
+            </a>
+          </div>
+
+          <!-- Micro-trust note under button -->
+          <p class="text-xs text-brand-textMuted text-center md:text-left flex items-center justify-center md:justify-start gap-2" data-i18n="micro_trust">
+            <span>🛡️</span> To'lov mahsulotni qo'lingizga olib, tekshirganingizdan keyin amalga oshiriladi.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar (Divider with Orange Vertical Bars) -->
+  <section class="border-y border-brand-border bg-[#181310] py-5">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-0">
+        
+        <div class="md:px-4 md:border-r border-brand-orange/40 flex flex-col justify-center">
+          <p class="text-sm md:text-base font-extrabold text-white" data-i18n="tbar_1_t">O'zbekiston bo'ylab</p>
+          <p class="text-xs text-brand-textMuted" data-i18n="tbar_1_s">Tezkor yetkazib berish</p>
+        </div>
+
+        <div class="md:px-4 md:border-r border-brand-orange/40 flex flex-col justify-center">
+          <p class="text-sm md:text-base font-extrabold text-white" data-i18n="tbar_2_t">Qabulda to'lov</p>
+          <p class="text-xs text-brand-textMuted" data-i18n="tbar_2_s">Naqd yoki karta orqali</p>
+        </div>
+
+        <div class="md:px-4 md:border-r border-brand-orange/40 flex flex-col justify-center">
+          <p class="text-sm md:text-base font-extrabold text-white" data-i18n="tbar_3_t">1 Yil Kafolat</p>
+          <p class="text-xs text-brand-textMuted" data-i18n="tbar_3_s">Rasmiy servis xizmati</p>
+        </div>
+
+        <div class="md:px-4 flex flex-col justify-center">
+          <p class="text-sm md:text-base font-extrabold text-white" data-i18n="tbar_4_t">To'liq tayyor to'plam</p>
+          <p class="text-xs text-brand-textMuted" data-i18n="tbar_4_s">Panel + generator + lampalar</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: What You Get (6 Cards Grid) -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-4xl font-black text-white mb-10 tracking-tight" data-i18n="features_title">
+        To'plam bilan nimalarga ega bo'lasiz
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        
+        <!-- Card 1 -->
+        <div class="bg-brand-card p-6 rounded-2xl border border-brand-border hover:border-brand-orange/40 transition">
+          <h3 class="text-lg font-extrabold text-white mb-2" data-i18n="feat_1_t">220V Toza Sinus Rozetka</h3>
+          <p class="text-xs md:text-sm text-brand-textMuted leading-relaxed" data-i18n="feat_1_d">
+            Nozik maishiy texnikalar, noutbuklar, kompyuter va Wi-Fi routerlar kuchlanish o'ynashidan himoyalangan holda xavfsiz ishlaydi.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-brand-card p-6 rounded-2xl border border-brand-border hover:border-brand-orange/40 transition">
+          <h3 class="text-lg font-extrabold text-white mb-2" data-i18n="feat_2_t">50W Monokristall Panel</h3>
+          <p class="text-xs md:text-sm text-brand-textMuted leading-relaxed" data-i18n="feat_2_d">
+            O'ta quyoshli bo'lmagan, oddiy yorug'likli kunda ham 6-7 soatda generatorni 100% zaryadlash qobiliyatiga ega.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-brand-card p-6 rounded-2xl border border-brand-border hover:border-brand-orange/40 transition">
+          <h3 class="text-lg font-extrabold text-white mb-2" data-i18n="feat_3_t">3 ta LED Chiroq Komplektda</h3>
+          <p class="text-xs md:text-sm text-brand-textMuted leading-relaxed" data-i18n="feat_3_d">
+            Har biri alohida o'chirgich va uzun simlar bilan jihozlangan. Xonadonning 3 ta alohida xonasini bir vaqtda yoritadi.
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-brand-card p-6 rounded-2xl border border-brand-border hover:border-brand-orange/40 transition">
+          <h3 class="text-lg font-extrabold text-white mb-2" data-i18n="feat_4_t">Tezkor USB & Type-C Portlar</h3>
+          <p class="text-xs md:text-sm text-brand-textMuted leading-relaxed" data-i18n="feat_4_d">
+            Bir vaqtning o'zida bir nechta smartfon, planshet yoki powerbanklarni 18W tezkor rejimda to'liq quvvatlaydi.
+          </p>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="bg-brand-card p-6 rounded-2xl border border-brand-border hover:border-brand-orange/40 transition">
+          <h3 class="text-lg font-extrabold text-white mb-2" data-i18n="feat_5_t">LCD Displey va Fonar</h3>
+          <p class="text-xs md:text-sm text-brand-textMuted leading-relaxed" data-i18n="feat_5_d">
+            Batareya foizi, kirish va chiqish quvvatini aniq ko'rsatib turadi. Korpusdagi favqulodda yorqin fonar qorong'ida darhol asqatadi.
+          </p>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="bg-brand-card p-6 rounded-2xl border border-brand-border hover:border-brand-orange/40 transition">
+          <h3 class="text-lg font-extrabold text-white mb-2" data-i18n="feat_6_t">Ixcham va Yengil Korpus</h3>
+          <p class="text-xs md:text-sm text-brand-textMuted leading-relaxed" data-i18n="feat_6_d">
+            Maxsus qulay tutqich. Hovli, dala hovli, tog' sayohati, baliq ovi yoki mashina yukxonasida saqlash juda oson.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Specifications Table -->
+  <section class="py-12 bg-[#17120f] border-y border-brand-border">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-black text-white mb-8 tracking-tight" data-i18n="specs_title">
+        Texnik ko'rsatkichlari
+      </h2>
+
+      <div class="divide-y divide-brand-border border-y border-brand-border text-sm">
+        
+        <div class="py-3.5 flex justify-between items-center">
+          <span class="text-brand-textMuted" data-i18n="spec_1_k">Nominal quvvati</span>
+          <span class="font-bold text-white text-right">400W (Pik quvvat: 600W)</span>
+        </div>
+
+        <div class="py-3.5 flex justify-between items-center">
+          <span class="text-brand-textMuted" data-i18n="spec_2_k">Chiqish kuchlanishi</span>
+          <span class="font-bold text-white text-right">220V / 50Hz (Toza sinus)</span>
+        </div>
+
+        <div class="py-3.5 flex justify-between items-center">
+          <span class="text-brand-textMuted" data-i18n="spec_3_k">Quyosh paneli</span>
+          <span class="font-bold text-white text-right">50W monokristall (kabeli bilan)</span>
+        </div>
+
+        <div class="py-3.5 flex justify-between items-center">
+          <span class="text-brand-textMuted" data-i18n="spec_4_k">Portlar</span>
+          <span class="font-bold text-white text-right">1x 220V, 2x USB-A, 1x Type-C, 2x DC 12V</span>
+        </div>
+
+        <div class="py-3.5 flex justify-between items-center">
+          <span class="text-brand-textMuted" data-i18n="spec_5_k">Zaryadlash manbalari</span>
+          <span class="font-bold text-white text-right">Quyosh paneli yoki 220V elektr tarmog'i</span>
+        </div>
+
+        <div class="py-3.5 flex justify-between items-center">
+          <span class="text-brand-textMuted" data-i18n="spec_6_k">O'lchamlari va og'irligi</span>
+          <span class="font-bold text-white text-right">230 × 140 × 165 mm / 3.8 kg</span>
+        </div>
+
+        <div class="py-3.5 flex justify-between items-center">
+          <span class="text-brand-textMuted" data-i18n="spec_7_k">To'liq komplektatsiya</span>
+          <span class="font-bold text-white text-right">Generator, 50W panel, 3 ta lampochka, 220V zaryadlash simi</span>
+        </div>
+
+        <div class="py-3.5 flex justify-between items-center">
+          <span class="text-brand-textMuted" data-i18n="spec_8_k">Kafolat</span>
+          <span class="font-bold text-brand-orange text-right">1 Yil rasmiy kafolat</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Gallery Showcase Section -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-black text-white mb-10 tracking-tight" data-i18n="gallery_title">
+        Rasmlarda batafsil
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Gallery Card 1 -->
+        <div class="bg-brand-card rounded-2xl border border-brand-border overflow-hidden p-6 flex flex-col justify-between">
+          <div class="w-full aspect-video bg-gradient-to-br from-neutral-800 to-neutral-900 rounded-xl mb-4 flex items-center justify-center text-4xl">
+            📊
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-white mb-1" data-i18n="gal_1_t">Raqamli Nazorat</h3>
+            <p class="text-xs text-brand-textMuted" data-i18n="gal_1_d">Aniq LCD displey batareya foizi va kirish/chiqish quvvatini real vaqtda ko'rsatib turadi.</p>
+          </div>
+        </div>
+
+        <!-- Gallery Card 2 -->
+        <div class="bg-brand-card rounded-2xl border border-brand-border overflow-hidden p-6 flex flex-col justify-between">
+          <div class="w-full aspect-video bg-gradient-to-br from-neutral-800 to-neutral-900 rounded-xl mb-4 flex items-center justify-center text-4xl">
+            ☀️
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-white mb-1" data-i18n="gal_2_t">Yorug'likdan Quvvat Olish</h3>
+            <p class="text-xs text-brand-textMuted" data-i18n="gal_2_d">Panelni deraza tokchasiga yoki tomga qo'yish kifoya — kun bo'yi tekin energiya to'playdi.</p>
+          </div>
+        </div>
+
+        <!-- Gallery Card 3 -->
+        <div class="bg-brand-card rounded-2xl border border-brand-border overflow-hidden p-6 flex flex-col justify-between">
+          <div class="w-full aspect-video bg-gradient-to-br from-neutral-800 to-neutral-900 rounded-xl mb-4 flex items-center justify-center text-4xl">
+            💡
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-white mb-1" data-i18n="gal_3_t">Uzluksiz Yoritish</h3>
+            <p class="text-xs text-brand-textMuted" data-i18n="gal_3_d">Maxsus lampochkalar bir zaryad bilan 12 soatgacha uy ichini yorug' qilib beradi.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Mid-page CTA button -->
+      <div class="mt-10 text-center max-w-md mx-auto">
+        <a href="#order-form-section" class="w-full py-4 rounded-xl bg-brand-orange hover:bg-brand-orangeHover text-white font-extrabold text-base transition block shadow-lg shadow-orange-950/40" data-i18n="cta_btn">
+          Buyurtma berish
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lead Form Section (Reference Card Style) -->
+  <section id="order-form-section" class="py-16 bg-[#16110e] border-y border-brand-border">
+    <div class="max-w-xl mx-auto px-4">
+      <div class="bg-brand-card p-6 md:p-10 rounded-3xl border border-brand-border shadow-2xl">
+        
+        <div class="mb-6">
+          <h2 class="text-2xl md:text-3xl font-black text-white" data-i18n="form_title">
+            Ariza qoldiring, biz qo'ng'iroq qilamiz
+          </h2>
+          <div class="flex items-center justify-between mt-3 pb-3 border-b border-brand-border">
+            <span class="text-sm font-bold text-brand-textSub">Keonia 400W Pro Komplekt</span>
+            <span class="text-lg font-black text-brand-orange">2 090 000 so'm</span>
+          </div>
+        </div>
+
+        <form id="lead-order-form" class="space-y-4">
+          
+          <div>
+            <label class="block text-xs font-semibold text-brand-textMuted mb-1" data-i18n="input_name_label">Ismingiz</label>
+            <input type="text" id="cust-name" required placeholder="Masalan: Azizbek" class="w-full px-4 py-3.5 rounded-xl bg-[#140f0c] border border-brand-border text-white placeholder-neutral-600 text-sm focus:outline-none focus:border-brand-orange transition">
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-brand-textMuted mb-1" data-i18n="input_phone_label">Telefon raqamingiz</label>
+            <input type="tel" id="cust-phone" required value="+998 " class="w-full px-4 py-3.5 rounded-xl bg-[#140f0c] border border-brand-border text-white placeholder-neutral-600 text-sm font-semibold tracking-wide focus:outline-none focus:border-brand-orange transition">
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-brand-textMuted mb-1" data-i18n="input_model_label">Kerakli quvvat modeli</label>
+            <select id="cust-model" class="w-full px-4 py-3.5 rounded-xl bg-[#140f0c] border border-brand-border text-white text-sm focus:outline-none focus:border-brand-orange transition">
+              <option value="Keonia 400W (2 090 000 so'm)">Keonia 400W (Smart uy uchun) — 2 090 000 so'm</option>
+              <option value="Keonia Mini 50W (1 100 000 so'm)">Keonia Mini 50W (Chiroq va telefon) — 1 100 000 so'm</option>
+              <option value="Keonia Pro 1200W (4 900 000 so'm)">Keonia Pro 1200W (Muzlatkich va TV) — 4 900 000 so'm</option>
+              <option value="Keonia Max 2000W (7 200 000 so'm)">Keonia Max 2000W (Kotyol va hovli) — 7 200 000 so'm</option>
+            </select>
+          </div>
+
+          <button type="submit" id="submit-button" class="w-full py-4 mt-2 rounded-xl bg-brand-orange hover:bg-brand-orangeHover text-white font-black text-base transition shadow-lg shadow-orange-950/40" data-i18n="form_submit_btn">
+            Buyurtmani rasmiylashtirish
+          </button>
+
+          <p class="text-xs text-brand-textMuted text-center mt-3" data-i18n="form_subtext">
+            Hozir to'lash shart emas: to'lov faqat mahsulotni olganda.
+          </p>
+
+        </form>
+
+        <!-- Success Feedback Modal / Block -->
+        <div id="order-success" class="hidden text-center py-8">
+          <div class="w-14 h-14 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center text-3xl mx-auto mb-3">✓</div>
+          <h3 class="text-xl font-black text-white mb-1" data-i18n="success_h">Arizangiz qabul qilindi!</h3>
+          <p class="text-xs text-brand-textSub" data-i18n="success_p">Operatorimiz 10 daqiqa ichida buyurtmani tasdiqlash uchun bog'lanadi.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion Section (Clean list with + icons) -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-black text-white mb-8 tracking-tight" data-i18n="faq_title">
+        Ko'p beriladigan savollar
+      </h2>
+
+      <div class="divide-y divide-brand-border border-y border-brand-border" id="faq-container">
+        
+        <!-- FAQ Item 1 -->
+        <div class="py-4">
+          <button onclick="toggleFAQ(1)" class="w-full flex justify-between items-center text-left text-sm md:text-base font-bold text-white hover:text-brand-orange transition">
+            <span data-i18n="faq_q1">Quyosh paneli faqat o'ta issiq quyoshda ishlaydimi?</span>
+            <span id="faq-icon-1" class="text-xl font-bold text-brand-orange transition-transform duration-200">+</span>
+          </button>
+          <div id="faq-ans-1" class="hidden mt-3 text-xs md:text-sm text-brand-textMuted leading-relaxed" data-i18n="faq_a1">
+            Yo'q, monokristall panellar to'g'ridan-to'g'ri jazirama quyoshni talab qilmaydi. Oddiy yorug' kunda va hatto yengil bulutli havoda ham kunduzgi yorug'likdan tok ishlab chiqaradi.
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="py-4">
+          <button onclick="toggleFAQ(2)" class="w-full flex justify-between items-center text-left text-sm md:text-base font-bold text-white hover:text-brand-orange transition">
+            <span data-i18n="faq_q2">Bir zaryad bilan Wi-Fi va noutbuk qancha vaqt ishlaydi?</span>
+            <span id="faq-icon-2" class="text-xl font-bold text-brand-orange transition-transform duration-200">+</span>
+          </button>
+          <div id="faq-ans-2" class="hidden mt-3 text-xs md:text-sm text-brand-textMuted leading-relaxed" data-i18n="faq_a2">
+            Wi-Fi router uzluksiz 20-25 soatdan ortiq, noutbukni esa 4-5 marta to'liq quvvatlash imkoniyatiga ega. 3 ta lampochkani 10-12 soat davomida yoqib beradi.
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="py-4">
+          <button onclick="toggleFAQ(3)" class="w-full flex justify-between items-center text-left text-sm md:text-base font-bold text-white hover:text-brand-orange transition">
+            <span data-i18n="faq_q3">Uskunani o'rnatish uchun usta chaqirish kerakmi?</span>
+            <span id="faq-icon-3" class="text-xl font-bold text-brand-orange transition-transform duration-200">+</span>
+          </button>
+          <div id="faq-ans-3" class="hidden mt-3 text-xs md:text-sm text-brand-textMuted leading-relaxed" data-i18n="faq_a3">
+            Hech qanday usta shart emas. Tizim to'liq tayyor holatda keladi. Quyosh panelini derazaga yoki balkonga qo'yib, simini generatorga ulasangiz kifoya.
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="py-4">
+          <button onclick="toggleFAQ(4)" class="w-full flex justify-between items-center text-left text-sm md:text-base font-bold text-white hover:text-brand-orange transition">
+            <span data-i18n="faq_q4">Yetkazib berish qancha vaqt oladi va to'lov qanday?</span>
+            <span id="faq-icon-4" class="text-xl font-bold text-brand-orange transition-transform duration-200">+</span>
+          </button>
+          <div id="faq-ans-4" class="hidden mt-3 text-xs md:text-sm text-brand-textMuted leading-relaxed" data-i18n="faq_a4">
+            Toshkent shahrida 3-5 soat ichida, viloyatlarga 24 soat ichida eshikkacha yetkaziladi. Mahsulotni tekshirib, yoqib ko'rganingizdan so'ng naqd yoki Uzcard/Humo orqali to'laysiz.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 bg-[#0d0a09] border-t border-brand-border text-xs text-brand-textMuted">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+      <div>
+        <p class="text-base font-extrabold text-white">KEONIA ENERGY UZBEKISTAN</p>
+        <p class="mt-1">+998 (71) 200-00-00 • +998 (90) 000-00-00</p>
+        <p class="text-[11px] text-neutral-600 mt-1">Har kuni 09:00 dan 21:00 gacha</p>
+      </div>
+      <div class="text-left md:text-right">
+        <p>© 2026 Barcha huquqlar himoyalangan.</p>
+        <p class="text-[11px] text-neutral-600 mt-1">O'zbekiston bo'ylab rasmiy yetkazib berish xizmati.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts: FAQ, Language Toggle & Lead submission -->
+  <script>
+    // 1. Google Sheets Web App URL (Quyidagi o'zgaruvchiga o'z havolangizni qo'ying)
+    const GOOGLE_SCRIPT_WEBAPP_URL = "YOUR_APPS_SCRIPT_URL_HERE";
+
+    // 2. FAQ Accordion Toggle
+    function toggleFAQ(id) {
+      const ans = document.getElementById(`faq-ans-${id}`);
+      const icon = document.getElementById(`faq-icon-${id}`);
+      const isHidden = ans.classList.contains('hidden');
+
+      // Close all
+      for(let i=1; i<=4; i++) {
+        document.getElementById(`faq-ans-${i}`)?.classList.add('hidden');
+        const ic = document.getElementById(`faq-icon-${i}`);
+        if(ic) { ic.innerText = '+'; ic.classList.remove('rotate-45'); }
+      }
+
+      if(isHidden) {
+        ans.classList.remove('hidden');
+        icon.innerText = '−';
+      }
+    }
+
+    // 3. Bilingual Dictionary (UZ / RU)
+    const translations = {
+      uz: {
+        hero_f1_t: "Quvvat",
+        hero_f2_t: "Zaryadlash",
+        hero_f3_t: "Og'irligi",
+        hero_h1: "Quyosh generatori Keonia Q4: svet o'chganda xonadoningizda doim elektr bo'lsin",
+        hero_desc: "Usta va montaj shart emas. 220V rozetkali ixcham elektr stansiyasi: Wi-Fi router, telefonlar, noutbuk, televizor va LED lampochkalarni soatlab uzluksiz quvvat bilan ta'minlaydi.",
+        price_save: "Siz 1 110 000 so'm tejab qolasiz",
+        cta_btn: "Buyurtma berish",
+        micro_trust: "🛡️ To'lov mahsulotni qo'lingizga olib, tekshirganingizdan keyin amalga oshiriladi.",
+        tbar_1_t: "O'zbekiston bo'ylab",
+        tbar_1_s: "Tezkor yetkazib berish",
+        tbar_2_t: "Qabulda to'lov",
+        tbar_2_s: "Naqd yoki karta orqali",
+        tbar_3_t: "1 Yil Kafolat",
+        tbar_3_s: "Rasmiy servis xizmati",
+        tbar_4_t: "To'liq tayyor to'plam",
+        tbar_4_s: "Panel + generator + lampalar",
+        features_title: "To'plam bilan nimalarga ega bo'lasiz",
+        feat_1_t: "220V Toza Sinus Rozetka",
+        feat_1_d: "Nozik maishiy texnikalar, noutbuklar, kompyuter va Wi-Fi routerlar kuchlanish o'ynashidan himoyalangan holda xavfsiz ishlaydi.",
+        feat_2_t: "50W Monokristall Panel",
+        feat_2_d: "O'ta quyoshli bo'lmagan, oddiy yorug'likli kunda ham 6-7 soatda generatorni 100% zaryadlash qobiliyatiga ega.",
+        feat_3_t: "3 ta LED Chiroq Komplektda",
+        feat_3_d: "Har biri alohida o'chirgich va uzun simlar bilan jihozlangan. Xonadonning 3 ta alohida xonasini bir vaqtda yoritadi.",
+        feat_4_t: "Tezkor USB & Type-C Portlar",
+        feat_4_d: "Bir vaqtning o'zida bir nechta smartfon, planshet yoki powerbanklarni 18W tezkor rejimda to'liq quvvatlaydi.",
+        feat_5_t: "LCD Displey va Fonar",
+        feat_5_d: "Batareya foizi, kirish va chiqish quvvatini aniq ko'rsatib turadi. Korpusdagi favqulodda yorqin fonar qorong'ida darhol asqatadi.",
+        feat_6_t: "Ixcham va Yengil Korpus",
+        feat_6_d: "Maxsus qulay tutqich. Hovli, dala hovli, tog' sayohati, baliq ovi yoki mashina yukxonasida saqlash juda oson.",
+        specs_title: "Texnik ko'rsatkichlari",
+        spec_1_k: "Nominal quvvati",
+        spec_2_k: "Chiqish kuchlanishi",
+        spec_3_k: "Quyosh paneli",
+        spec_4_k: "Portlar",
+        spec_5_k: "Zaryadlash manbalari",
+        spec_6_k: "O'lchamlari va og'irligi",
+        spec_7_k: "To'liq komplektatsiya",
+        spec_8_k: "Kafolat",
+        gallery_title: "Rasmlarda batafsil",
+        gal_1_t: "Raqamli Nazorat",
+        gal_1_d: "Aniq LCD displey batareya foizi va kirish/chiqish quvvatini real vaqtda ko'rsatib turadi.",
+        gal_2_t: "Yorug'likdan Quvvat Olish",
+        gal_2_d: "Panelni deraza tokchasiga yoki tomga qo'yish kifoya — kun bo'yi tekin energiya to'playdi.",
+        gal_3_t: "Uzluksiz Yoritish",
+        gal_3_d: "Maxsus lampochkalar bir zaryad bilan 12 soatgacha uy ichini yorug' qilib beradi.",
+        form_title: "Ariza qoldiring, biz qo'ng'iroq qilamiz",
+        input_name_label: "Ismingiz",
+        input_phone_label: "Telefon raqamingiz",
+        input_model_label: "Kerakli quvvat modeli",
+        form_submit_btn: "Buyurtmani rasmiylashtirish",
+        form_subtext: "Hozir to'lash shart emas: to'lov faqat mahsulotni olganda.",
+        success_h: "Arizangiz qabul qilindi!",
+        success_p: "Operatorimiz 10 daqiqa ichida buyurtmani tasdiqlash uchun bog'lanadi.",
+        faq_title: "Ko'p beriladigan savollar",
+        faq_q1: "Quyosh paneli faqat o'ta issiq quyoshda ishlaydimi?",
+        faq_a1: "Yo'q, monokristall panellar to'g'ridan-to'g'ri jazirama quyoshni talab qilmaydi. Oddiy yorug' kunda va hatto yengil bulutli havoda ham kunduzgi yorug'likdan tok ishlab chiqaradi.",
+        faq_q2: "Bir zaryad bilan Wi-Fi va noutbuk qancha vaqt ishlaydi?",
+        faq_a2: "Wi-Fi router uzluksiz 20-25 soatdan ortiq, noutbukni esa 4-5 marta to'liq quvvatlash imkoniyatiga ega. 3 ta lampochkani 10-12 soat davomida yoqib beradi.",
+        faq_q3: "Uskunani o'rnatish uchun usta chaqirish kerakmi?",
+        faq_a3: "Hech qanday usta shart emas. Tizim to'liq tayyor holatda keladi. Quyosh panelini derazaga yoki balkonga qo'yib, simini generatorga ulasangiz kifoya.",
+        faq_q4: "Yetkazib berish qancha vaqt oladi va to'lov qanday?",
+        faq_a4: "Toshkent shahrida 3-5 soat ichida, viloyatlarga 24 soat ichida eshikkacha yetkaziladi. Mahsulotni tekshirib, yoqib ko'rganingizdan so'ng naqd yoki Uzcard/Humo orqali to'laysiz."
+      },
+      ru: {
+        hero_f1_t: "Мощность",
+        hero_f2_t: "Зарядка",
+        hero_f3_t: "Вес станции",
+        hero_h1: "Солнечный генератор Keonia Q4: будьте всегда со светом при отключениях",
+        hero_desc: "Без вызова мастера и сложного монтажа. Розетка 220В прямо у вас под рукой: питает Wi-Fi роутер, телефоны, ноутбук, телевизор и освещение часами напролёт.",
+        price_save: "Вы экономите 1 110 000 сум",
+        cta_btn: "Оформить заказ",
+        micro_trust: "🛡️ Оплата при получении после полной проверки товара.",
+        tbar_1_t: "По всему Узбекистану",
+        tbar_1_s: "Быстрая доставка",
+        tbar_2_t: "Оплата при получении",
+        tbar_2_s: "Наличными или картой",
+        tbar_3_t: "Гарантия 1 год",
+        tbar_3_s: "Официальный сервис",
+        tbar_4_t: "Полный комплект",
+        tbar_4_s: "Панель + станция + лампы",
+        features_title: "Что вы получаете",
+        feat_1_t: "Розетка 220V Чистый Синус",
+        feat_1_d: "Безопасное питание для чувствительной электроники: ноутбуки, Wi-Fi роутеры и телевизоры работают без перепадов.",
+        feat_2_t: "Монокристаллическая панель 50W",
+        feat_2_d: "Заряжает станцию за 6–7 часов даже при обычной дневной освещенности без яркого палящего солнца.",
+        feat_3_t: "3 LED лампы в комплекте",
+        feat_3_d: "Каждая лампа с отдельным выключателем и длинным кабелем для освещения сразу трёх разных комнат.",
+        feat_4_t: "Быстрые USB и Type-C порты",
+        feat_4_d: "Одновременная быстрая зарядка смартфонов, планшетов и повербанков на высокой мощности.",
+        feat_5_t: "LCD Дисплей и Фонарь",
+        feat_5_d: "Точный контроль заряда и мощности в реальном времени. Встроенный яркий фонарь выручит при внезапной темноте.",
+        feat_6_t: "Компактный и легкий корпус",
+        feat_6_d: "Удобная ручка для переноски. Идеально для квартиры, частного дома, дачи, пикника и поездок на природу.",
+        specs_title: "Технические характеристики",
+        spec_1_k: "Номинальная мощность",
+        spec_2_k: "Выходное напряжение",
+        spec_3_k: "Солнечная панель",
+        spec_4_k: "Выходные разъёмы",
+        spec_5_k: "Способы зарядки",
+        spec_6_k: "Габариты и вес",
+        spec_7_k: "Комплектация",
+        spec_8_k: "Гарантия",
+        gallery_title: "Подробнее на фото",
+        gal_1_t: "Цифровой Контроль",
+        gal_1_d: "Информативный дисплей показывает процент заряда, входящее и исходящее напряжение.",
+        gal_2_t: "Энергия от дневного света",
+        gal_2_d: "Достаточно выставить панель на балкон или окно для постоянного пополнения энергии.",
+        gal_3_t: "Автономный свет",
+        gal_3_d: "Комплектные лампы способны непрерывно освещать дом до 12 часов от одного заряда.",
+        form_title: "Оставьте заявку, мы перезвоним",
+        input_name_label: "Ваше имя",
+        input_phone_label: "Номер телефона",
+        input_model_label: "Выберите комплект",
+        form_submit_btn: "Оформить заказ",
+        form_subtext: "Платить сейчас не нужно: оплата при получении.",
+        success_h: "Заявка успешно принята!",
+        success_p: "Наш специалист свяжется с вами в течение 10 минут.",
+        faq_title: "Частые вопросы",
+        faq_q1: "Панель работает только на открытом солнце?",
+        faq_a1: "Нет, панель генерирует ток от любого дневного рассеянного света, даже в пасмурную погоду.",
+        faq_q2: "Сколько часов проработает Wi-Fi и ноутбук?",
+        faq_a2: "Wi-Fi роутер работает более 20 часов, ноутбук можно зарядить 4–5 раз, а 3 лампы светят до 12 часов.",
+        faq_q3: "Нужен ли мастер для установки?",
+        faq_a3: "Нет, система работает по принципу Plug & Play. Достаточно подключить провод от панели к станции.",
+        faq_q4: "Каковы условия доставки и оплаты?",
+        faq_a4: "По Ташкенту 3–5 часов, по областям до 24 часов до двери. Оплата курьеру после проверки наличными или картой."
+      }
+    };
+
+    function setLanguage(lang) {
+      const btnUz = document.getElementById('lang-uz');
+      const btnRu = document.getElementById('lang-ru');
+
+      if (lang === 'uz') {
+        btnUz.className = "px-3 py-1 rounded bg-brand-orange text-white transition";
+        btnRu.className = "px-3 py-1 rounded text-brand-textMuted hover:text-white transition";
+      } else {
+        btnRu.className = "px-3 py-1 rounded bg-brand-orange text-white transition";
+        btnUz.className = "px-3 py-1 rounded text-brand-textMuted hover:text-white transition";
+      }
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          el.innerText = translations[lang][key];
+        }
+      });
+    }
+
+    // 4. Form submission handler
+    const form = document.getElementById('lead-order-form');
+    const submitBtn = document.getElementById('submit-button');
+    const successBlock = document.getElementById('order-success');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.innerText = "Yuborilmoqda...";
+
+      const leadData = {
+        name: document.getElementById('cust-name').value,
+        phone: document.getElementById('cust-phone').value,
+        model: document.getElementById('cust-model').value,
+        date: new Date().toLocaleString('uz-UZ')
+      };
+
+      try {
+        if (GOOGLE_SCRIPT_WEBAPP_URL && !GOOGLE_SCRIPT_WEBAPP_URL.includes("YOUR_APPS_SCRIPT")) {
+          await fetch(GOOGLE_SCRIPT_WEBAPP_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(leadData)
+          });
+        }
+        form.classList.add('hidden');
+        successBlock.classList.remove('hidden');
+      } catch (err) {
+        alert("Xatolik yuz berdi. Iltimos qayta urinib ko'ring.");
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Buyurtmani rasmiylashtirish";
+      }
+    });
+  </script>
+</body>
+</html>
